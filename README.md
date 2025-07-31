@@ -2,6 +2,29 @@
 
 This project is a React application bootstrapped with Vite and styled using Tailwind CSS. All frontend code is located in the `frontend` directory.
 
+## Features
+
+- **Theme Switcher:** Select from three distinct themes (Minimalist, Dark, Playful) using a dropdown in the header. The selected theme is persisted across page reloads using localStorage.
+- **Redux State Management:** Theme state is managed globally with Redux Toolkit.
+- **React Router:** Multi-page navigation (Home, About, Contact) with React Router.
+- **Responsive Design:** Layouts adapt for desktop and mobile.
+- **API Integration:** Product data is fetched from [Fake Store API](https://fakestoreapi.com/products) and displayed on the Home page.
+
+## Themes
+
+- **Theme 1 (Default): Minimalist**
+  - Light background, simple sans-serif font (Inter)
+  - Centered, clean layout
+  - Subtle blue accents
+- **Theme 2: Dark Mode**
+  - Dark background, bold serif font (Merriweather)
+  - Sidebar layout on desktop
+  - Green accents and strong contrast
+- **Theme 3: Playful/Colorful**
+  - Colorful backgrounds, playful Google Font (Pacifico)
+  - Card-based grid layout
+  - Pink, yellow, and green accents
+
 ## Project Structure
 
 ```
@@ -39,6 +62,14 @@ npm run build
 ```bash
 npm run preview
 ```
+
+## Tech Stack
+- React 19
+- Vite
+- Tailwind CSS 4
+- Redux Toolkit
+- React Router DOM
+- TypeScript
 
 ## Additional Notes
 - Make sure you have Node.js (v16 or higher) and npm installed.
