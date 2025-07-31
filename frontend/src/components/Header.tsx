@@ -2,12 +2,10 @@ import { Link } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
 import { setTheme } from '../store/themeSlice';
 import type { Theme } from '../store/themeSlice';
-import { themes } from '../themes/themeConfig';
 
 const Header = () => {
   const dispatch = useAppDispatch();
   const currentTheme = useAppSelector((state) => state.theme.currentTheme);
-  const themeConfig = themes[currentTheme];
 
   const handleThemeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const newTheme = event.target.value as Theme;

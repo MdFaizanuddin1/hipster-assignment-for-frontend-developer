@@ -26,7 +26,7 @@ const Home = () => {
         setProducts(data);
         setLoading(false);
       })
-      .catch((err) => {
+      .catch(() => {
         setError('Failed to fetch products');
         setLoading(false);
       });
