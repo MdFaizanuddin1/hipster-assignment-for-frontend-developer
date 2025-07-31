@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Pacifico&display=swap');
+
+/* Theme font classes */
+.theme1-font {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+.theme2-font {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+}
+.theme3-font {
+  font-family: 'Pacifico', cursive;
+}
