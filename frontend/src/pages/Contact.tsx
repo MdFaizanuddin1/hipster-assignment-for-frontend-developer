@@ -1,11 +1,15 @@
+// Importing necessary hooks and components from React.
 import { useAppSelector } from '../store/hooks';
 import { themes } from '../themes/themeConfig';
 
+// Defining the Contact component.
+// This component is responsible for rendering the contact page of the application.
 const Contact = () => {
+  // Getting the current theme from the Redux store.
   const currentTheme = useAppSelector((state) => state.theme.currentTheme);
   const themeConfig = themes[currentTheme];
 
-  // Theme 1: Minimalist, centered, light, sans-serif
+  // Theme 1: Minimalist, centered, light, sans-serif.
   if (currentTheme === 'theme1') {
     return (
       <div className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center bg-white font-theme1 px-2 pt-4" style={{ backgroundColor: themeConfig.colors.background }}>
@@ -36,7 +40,7 @@ const Contact = () => {
     );
   }
 
-  // Theme 2: Dark mode, sidebar, bold serif font
+  // Theme 2: Dark mode, sidebar, bold serif font.
   if (currentTheme === 'theme2') {
     return (
       <div className="min-h-[calc(100vh-4rem)] flex bg-gray-900 font-theme2 pt-4">
@@ -80,7 +84,7 @@ const Contact = () => {
     );
   }
 
-  // Theme 3: Colorful, playful, card grid, Pacifico font
+  // Theme 3: Colorful, playful, card grid, Pacifico font.
   return (
     <div className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center bg-gradient-to-br from-pink-100 via-yellow-100 to-green-100 font-theme3 px-2 pt-4">
       <div className="w-full max-w-4xl mx-auto mb-8">

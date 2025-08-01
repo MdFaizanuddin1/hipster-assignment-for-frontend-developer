@@ -119,6 +119,7 @@
 
 // export default Header; 
 
+// Importing necessary hooks and components from React.
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
@@ -126,29 +127,37 @@ import { setTheme } from '../store/themeSlice';
 import type { Theme } from '../store/themeSlice';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
-
+// Defining the Header component.
+// This component is responsible for rendering the header section of the application.
 const Header = () => {
+  // Getting the dispatch function from Redux to dispatch actions.
   const dispatch = useAppDispatch();
+  // Getting the current theme from the Redux store.
   const currentTheme = useAppSelector((state) => state.theme.currentTheme);
+  // State to manage the open/closed state of the mobile navigation menu.
   const [menuOpen, setMenuOpen] = useState(false);
   const mobileNavRef = useRef<HTMLDivElement>(null);
   const [menuHeight, setMenuHeight] = useState(0);
 
+  // Function to handle theme changes.
   const handleThemeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const newTheme = event.target.value as Theme;
     dispatch(setTheme(newTheme));
   };
 
+  // Function to toggle the mobile navigation menu.
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
 
+  // Effect to set the menu height based on the mobile navigation menu's scroll height.
   useEffect(() => {
     if (mobileNavRef.current) {
       setMenuHeight(mobileNavRef.current.scrollHeight);
     }
   }, [menuOpen]);
 
+  // Base layout for the header.
   const baseLayout = (
     <div className="container mx-auto px-4 py-4 flex items-center justify-between">
       <Link to="/" className="text-2xl font-bold tracking-tight">
@@ -194,6 +203,7 @@ const Header = () => {
     </div>
   );
 
+  // Mobile navigation menu.
   const mobileNav = (
     <div
       ref={mobileNavRef}
@@ -210,7 +220,7 @@ const Header = () => {
     </div>
   );
 
-  // THEME 1
+  // THEME 1: Minimalist, light, sans-serif
   if (currentTheme === 'theme1') {
     return (
       <header className="sticky top-0 z-50 shadow-md bg-white font-theme1 border-b border-gray-200">
@@ -224,7 +234,7 @@ const Header = () => {
     );
   }
 
-  // THEME 2
+  // THEME 2: Dark, bold serif, dark navbar
   if (currentTheme === 'theme2') {
     return (
       <header className="sticky top-0 z-50 shadow-lg bg-gray-900 font-theme2 border-b border-gray-800 text-white">

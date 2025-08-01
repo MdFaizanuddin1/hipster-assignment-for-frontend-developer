@@ -1,7 +1,10 @@
+// Importing necessary hooks and components from React.
 import { useAppSelector } from '../store/hooks';
 import { themes } from '../themes/themeConfig';
 import { useEffect, useState } from 'react';
 
+// Defining the Product interface.
+// This interface represents the structure of a product object.
 interface Product {
   id: number;
   title: string;
@@ -11,13 +14,21 @@ interface Product {
   image: string;
 }
 
+// Defining the Home component.
+// This component is responsible for rendering the home page of the application.
 const Home = () => {
+  // Getting the current theme from the Redux store.
   const currentTheme = useAppSelector((state) => state.theme.currentTheme);
+  // Getting the theme configuration from the themes object.
   const themeConfig = themes[currentTheme];
+  // State to manage the products fetched from the API.
   const [products, setProducts] = useState<Product[]>([]);
+  // State to manage the loading state of the products.
   const [loading, setLoading] = useState(true);
+  // State to manage any errors that occur while fetching the products.
   const [error, setError] = useState<string | null>(null);
 
+  // Effect to fetch the products from the API.
   useEffect(() => {
     setLoading(true);
     fetch('https://fakestoreapi.com/products')
@@ -32,7 +43,7 @@ const Home = () => {
       });
   }, []);
 
-  // Theme 1: Minimalist, centered, light, sans-serif
+  // Theme 1: Minimalist, centered, light, sans-serif.
   if (currentTheme === 'theme1') {
     return (
       <div
@@ -94,7 +105,7 @@ const Home = () => {
     );
   }
 
-  // Theme 2: Dark mode, sidebar, bold serif font
+  // Theme 2: Dark mode, sidebar, bold serif font.
   if (currentTheme === 'theme2') {
     return (
       <div className="min-h-[calc(100vh-4rem)] flex bg-gray-900 font-theme2 pt-4">
@@ -156,7 +167,7 @@ const Home = () => {
     );
   }
 
-  // Theme 3: Colorful, playful, card grid, Pacifico font
+  // Theme 3: Colorful, playful, card grid, Pacifico font.
   return (
     <div
       className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center bg-gradient-to-br from-pink-100 via-yellow-100 to-green-100 font-theme3 px-2 pt-4"
