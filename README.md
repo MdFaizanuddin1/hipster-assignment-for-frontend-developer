@@ -36,7 +36,7 @@ hipster assesment/
 
 ### 1. Clone the repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/MdFaizanuddin1/hipster-assignment-for-react-frontend-developer.git
 cd hipster\ assesment
 ```
 
@@ -62,6 +62,8 @@ npm run build
 ```bash
 npm run preview
 ```
+## Live Demo
+[View deployed app](https://hipster-assignment-for-frontend-dev.vercel.app/)
 
 ## Tech Stack
 - React 19
@@ -74,3 +76,6 @@ npm run preview
 ## Additional Notes
 - Make sure you have Node.js (v16 or higher) and npm installed.
 - Tailwind CSS is configured in the frontend project. You can add your styles in `frontend/src/index.css`.
+
+## Test Credentials
+_No authentication required — the app is publicly accessible._
