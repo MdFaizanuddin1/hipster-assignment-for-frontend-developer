@@ -1,16 +1,20 @@
+/* Import Tailwind CSS base, components, and utilities */
 @import "tailwindcss";
 
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Pacifico&display=swap');
 
 /* Theme font classes */
+/* Font family for Theme 1 (default system sans-serif stack with Inter) */
 .theme1-font {
   font-family: 'Inter', system-ui, sans-serif;
 }
+/* Font family for Theme 2 (serif-style Merriweather with bold weight) */
 .theme2-font {
   font-family: 'Merriweather', serif;
   font-weight: 700;
 }
+/* Font family for Theme 3 (handwritten-style Pacifico) */
 .theme3-font {
   font-family: 'Pacifico', cursive;
 }
