@@ -1,5 +1,8 @@
+// Importing the Theme type from the themeSlice store for type safety.
 import type { Theme } from '../store/themeSlice';
 
+// Defining a TypeScript interface for a theme configuration.
+// Each theme includes a name and a set of color properties.
 export interface ThemeConfig {
   name: string;
   colors: {
@@ -14,7 +17,10 @@ export interface ThemeConfig {
   };
 }
 
+// A mapping of theme names (theme1, theme2, theme3) to their corresponding color configurations.
+// Each theme provides a consistent set of color values used across the application UI.
 export const themes: Record<Theme, ThemeConfig> = {
+  // Theme 1: A blue-toned theme with light background and vivid accent color.
   theme1: {
     name: 'Theme 1',
     colors: {
@@ -28,6 +34,7 @@ export const themes: Record<Theme, ThemeConfig> = {
       border: '#E2E8F0',
     },
   },
+  // Theme 2: A green-themed palette with fresh and natural tones.
   theme2: {
     name: 'Theme 2',
     colors: {
@@ -41,6 +48,7 @@ export const themes: Record<Theme, ThemeConfig> = {
       border: '#D1FAE5',
     },
   },
+  // Theme 3: A purple-themed palette with rich and elegant colors.
   theme3: {
     name: 'Theme 3',
     colors: {
